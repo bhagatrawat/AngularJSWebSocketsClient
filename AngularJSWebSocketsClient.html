@@ -1,0 +1,77 @@
+<!--
+##############################################
+	WebSockets AngularJS based client Home Page
+	@Author: Bhagat Singh
+#############################################
+-->
+<!DOCTYPE html>
+<html data-ng-app="gluConsoleExt">
+<head>
+    <title>AngularJS WebSockets Client</title>
+    <link href="/AngularJSWebSocketsClient/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/AngularJSWebSocketsClient/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="/AngularJSWebSocketsClient/Content/consoleStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand ">
+                    <img src="/AngularJSWebSocketsClient/Content/Images/glu.png" alt="logo"> Glu Console Extension
+                </a>
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/applications')}">
+                        <a href="#/applications/">Dashboard</a>
+                    </li>
+                    <li data-ng-class="{'active':getClass('/about')}">
+                        <a href="#/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div animated-view></div>
+    <!-- ######################## Footer ######################## -->
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                Bhagat Singh
+                            </div>
+                            <div class="span4">
+                                Irvine, CA, 92604
+                            </div>
+                            <div class="span4">
+                                <a href="Bhagat@Github.com">https://github.com/bhagatsingh</a>
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="/AngularJSWebSocketsClient/Scripts/angular.js"></script>
+    <script src="/AngularJSWebSocketsClient/Scripts/angular-route.js"></script>
+    <script src="/AngularJSWebSocketsClient/Scripts/angular-resource.js"></script>
+    <script src="/AngularJSWebSocketsClient/Scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="/AngularJSWebSocketsClient/Scripts/bootstrap.js"></script>
+
+
+    <!-- Console Application libs -->
+    <script src="/AngularJSWebSocketsClient/app/approuter.js"></script>
+    <script src="/AngularJSWebSocketsClient/app/controllers/controllers.js"></script>
+    <script src="/AngularJSWebSocketsClient/app/services/rsServiceFactory.js"></script>
+    <script src="/AngularJSWebSocketsClient/app/directives/animatedView.js"></script>
+
+</body>
+</html>
