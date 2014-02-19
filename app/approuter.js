@@ -1,4 +1,3 @@
-
 /*######################################################################################
   Desc: Application Router, it will be useful in future when you have multiple pages.
   @Author: Bhagat Singh
@@ -22,11 +21,11 @@ consoleApp.config(function ($routeProvider) {
                 templateUrl: '/AngularJSWebSocketsClient/app/views/dashboard.html'
             })
         //Route to About tab
-        /*.when('/about/',
+        .when('/about/',
             {
                 controller: 'AboutController',
                 templateUrl: '/AngularJSWebSocketsClient/app/views/about.html'
-            })*/
+            })
          //if None of the above then route to Dashboard
         .otherwise({ redirectTo: '/applications/' });
 });
