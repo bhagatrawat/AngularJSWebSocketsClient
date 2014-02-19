@@ -1,0 +1,80 @@
+<!-- 
+######################################
+	This page will display update from WebSockets server in Real Time. 
+	@Author: Bhagat Singh
+######################################
+-->
+<div class="app view">
+    <div class="container">
+        <br/>
+        <header>
+            <div class="span12">
+                <table class="table table-hover table-striped table-condensed">
+                    <thead>
+                            <tr>
+                                <th>This is from WebSockets Server:</th>
+                                <th >Status: &nbsp; <span id="wsServerStatus"></span></th>
+                            </tr>
+                    </thead>
+                </table>
+            </div>
+        </header>
+        <div>
+            <div class="span12">
+                <table class="table table-hover table-striped table-condensed table-bordered appsTable">
+                    <thead>
+                        <tr>
+                            <th >Mark <input type="checkbox" ng-model="master"></th>
+                            <th >Instance</th>
+                            <th >Status</th>
+                            <th >Host</th>
+                            <th >Command</th>
+                            <th >Application</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-hide="applications || applications.length > 0" class="error">
+                            <td colspan="6">
+                                <div class="text-center"><strong>No Applications found</strong></div>
+                            </td>
+                        </tr>
+                        <tr data-ng-repeat="app in applications">
+                            <td>
+                                <input id="checkSlave" type="checkbox" ng-checked="master">
+                            </td>
+                            <td>
+                                {{app.appname}}
+                            </td>
+                            <td>
+                               {{app.status}}
+                            </td>
+                            <td>
+                                {{app.host}}
+                            </td>
+                            <td>
+                                <span data-ng-if="app.status== 'stopped'">
+                                    <button data-ng-click='serviceCommand(app)'>Start</button> 
+                                </span>
+                                <span data-ng-if="app.status=='running'">
+                                    <button data-ng-click='serviceCommand(app)'>Stop</button> 
+                                </span>
+                            </td>
+                            <td>
+                                {{app.appservername}}
+                            </td>
+                        </tr>
+                        <tr data-ng-show="hideInfoRow(applications)" class="info">
+                            <td colspan="6">
+                                <button data-ng-click="stopMarked()">Stop Marked</button>&nbsp;&nbsp;
+                                <button data-ng-click="startMarked()">Start Marked</button>&nbsp;&nbsp;
+                                <button data-ng-click="bounceMarked()">Bounce Marked</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>     
+            </div>
+        </div>
+    </div>
+</div>
+
+    
