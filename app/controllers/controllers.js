@@ -152,3 +152,9 @@ consoleApp.controller('NavbarController', function ($scope, $location) {
         }
     }
 });
+
+
+//Navigation Controller
+consoleApp.controller('AboutController', function ($scope) {
+//do nothing for now
+});
