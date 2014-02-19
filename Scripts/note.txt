@@ -1,12 +1,12 @@
 Please download following js files into this folder:
-  angular.min.js
-  angular-animate.min.js
-  angular-cookies.min.js
-  angular-loader.min.js
-  angular-resource.min.js
-  angular-route.min.js
-  angular-sanitize.min.js
-  angular-touch.min.js
-  bootstrap.min.js
+  angular.js
+  angular-animate.js
+  angular-cookies.js
+  angular-loader.js
+  angular-resource.js
+  angular-route.js
+  angular-sanitize.js
+  angular-touch.js
+  bootstrap.js
   jquery.min.js
   jquery.min.map
