@@ -31,8 +31,16 @@ consoleApp.controller('ApplicationsController', function ($scope, rsServiceFacto
 
       // Handle messages sent by the server.
       socket.onmessage = function(event) {
-           $scope.applications = JSON.parse(event.data);
-           $scope.$apply();
+      	var responseMsg = event.data;
+      	console.log("Response: "+ responseMsg);
+        if(!angular.isUndefined(responseMsg) && responseMsg != null && responseMsg !=''){
+        	$scope.applications = JSON.parse(responseMsg);
+           	$scope.$apply();
+       	}else{
+		$scope.applications = "";
+		$scope.$apply();
+       		console.log('No apps available to display on screen.');
+       	}
             document.getElementById("wsServerStatus").innerHTML = '<span style="color: green;">Connected</span>';
       };
 
